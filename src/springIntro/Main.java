@@ -1,16 +1,18 @@
 package springIntro;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Main {
 
+	private static ClassPathXmlApplicationContext context;
+
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//depencency injection
-		CustomerManager manager = new CustomerManager(new CustomerDalMysql());
+		CustomerManager manager = new CustomerManager(context.getBean("database",ICustomerDal.class));
 		manager.add();
-		System.out.println("veri tabaný deðiþtir");
-		manager = new CustomerManager(new CustomerDalOracle());
-		manager.add();
+
 	}
 	
 	//IoC - Inversion of Control
