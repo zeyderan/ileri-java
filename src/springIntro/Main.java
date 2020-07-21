@@ -5,7 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		
+		//depencency injection
 		CustomerManager manager = new CustomerManager(new CustomerDalMysql());
 		manager.add();
 		System.out.println("veri tabaný deðiþtir");

@@ -1,5 +1,6 @@
 package springIntro;
 
+//oracle veritabaný içi crud iþlemleri
 public class CustomerDalOracle implements ICustomerDal {
 
 	public void add() {
